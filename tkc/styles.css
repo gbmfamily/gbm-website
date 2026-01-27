@@ -457,6 +457,11 @@ body {
   color: var(--text);
 }
 
+.payment-value--big {
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
 .payment-note {
   margin-top: 14px;
   color: var(--muted);

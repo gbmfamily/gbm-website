@@ -493,6 +493,24 @@ body {
     padding: 40px 0;
   }
 
+  .hero-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-meta {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-verse {
+    margin-top: 20px;
+  }
+
+
   .hero h1 {
     font-size: 36px;
   }

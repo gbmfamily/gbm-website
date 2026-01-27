@@ -468,6 +468,12 @@ body {
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Contact */
 .contact-grid {
   display: grid;

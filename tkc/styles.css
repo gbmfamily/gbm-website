@@ -412,6 +412,57 @@ body {
   box-shadow: 0 10px 22px var(--shadow);
 }
 
+/* Payment */
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.payment-card {
+  background: white;
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+.payment-card--alt {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.payment-info {
+  margin-top: 14px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 14px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.payment-row:last-child {
+  border-bottom: none;
+}
+
+.payment-label {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.payment-value {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.payment-note {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 /* Contact */
 .contact-grid {
   display: grid;

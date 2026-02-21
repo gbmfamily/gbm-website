@@ -1,3 +1,174 @@
+###########################################################
+### Grace Bible Mission - Beautiful Jekyll Config
+### This config file sets up the website structure, theme, 
+### and branding for GBM.
+###########################################################
+
+############################
+# --- Required options --- #
+############################
+
+# Name of website
 title: Grace Bible Mission
-description: A family of believers committed to the Word and mission of Christ.
-theme: minima
+
+# Your name/organization to show in the footer
+author: Grace Bible Mission
+
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+navbar-links:
+  Home: "index"
+  About Us:
+    - History: "about"
+    - Beliefs: "beliefs"
+    - Leadership: "leadership"
+  Church:
+    - Districts: "districts"
+    - Assemblies: "assemblies"
+    - Pastors: "pastors"
+    - Events: "events"
+  Ministries:
+    - Students Fellowship: "gbmsf"
+  Contact: "contact"
+  Give: "give"
+
+################
+# --- Logo --- #
+################
+
+# Image to show in the navigation bar - works best with a square image
+avatar: "/assets/img/gbm-logo.png"
+round-avatar: true
+#title-img: "/assets/img/gbm-logo.png"
+
+#####################################
+# --- Footer social media links --- #
+#####################################
+
+social-network-links:
+  email: "hello@gbmfamily.org"
+  facebook: "GraceBibleMission"
+  twitter: "GBMFamily"
+  youtube: "GBMFamily"
+  whatsapp: "+2348012345678"
+
+rss-description: "Updates, events, and news from Grace Bible Mission"
+
+###########################
+# --- General options --- #
+###########################
+
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: false
+  vk: false
+  reddit: false
+
+url-pretty: "gbmfamily.org"
+title-on-all-pages: true
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+post_search: true
+edit_page_button: true
+navbar-var-length: false
+
+######################################
+# --- Colours / background image --- #
+######################################
+
+page-col: "#FFFFFF"
+text-col: "#404040"
+link-col: "#006400"        # dark green link color
+hover-col: "#228B22"       # hover darker green
+navbar-col: "#F0F0F0"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
+footer-col: "#F0F0F0"
+footer-text-col: "#404040"
+footer-link-col: "#006400"
+footer-hover-col: "#228B22"
+
+#site-css:
+#  - "/assets/css/custom-styles.css"
+
+#################################
+# --- Web Analytics Section --- #
+#################################
+
+#gtag: "G-XXXXXXXXXX"
+
+####################
+# --- Comments --- #
+####################
+
+#disqus: ""
+#fb_comment_id: ""
+#commentbox: ""
+#utterances:
+#  repository: 
+#  issue-term: title
+#  theme: github-light
+#  label: blog-comments
+
+################
+# --- Misc --- #
+################
+
+date_format: "%B %-d, %Y"
+timezone: "Africa/Lagos"
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+paginate: 5
+
+kramdown:
+  input: GFM
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      social-share: true
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
+
+exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - screenshot.png
+  - docs/
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+###########################################################
+# --- GBM Site Structure (Collections) --- #
+###########################################################
+
+collections:
+  assemblies:
+    output: true
+  districts:
+    output: true
+  pastors:
+    output: true
+  events:
+    output: true
+  gbmsf:
+    output: true

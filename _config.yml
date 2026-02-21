@@ -20,14 +20,17 @@ author: Grace Bible Mission
 
 navbar-links:
   Home: "index"
-  About: "about"
-  Beliefs: "beliefs"
-  Leadership: "leadership"
-  Districts: "districts"
-  Assemblies: "assemblies"
-  Pastors: "pastors"
-  Events: "events"
-  Students Fellowship: "gbmsf"
+  About Us:
+    - History: "about"
+    - Beliefs: "beliefs"
+    - Leadership: "leadership"
+  Church:
+    - Districts: "districts"
+    - Assemblies: "assemblies"
+    - Pastors: "pastors"
+    - Events: "events"
+  Ministries:
+    - Students Fellowship: "gbmsf"
   Contact: "contact"
   Give: "give"
 
@@ -45,7 +48,7 @@ round-avatar: true
 #####################################
 
 social-network-links:
-  email: "info@gbmfamily.org"
+  email: "hello@gbmfamily.org"
   facebook: "GraceBibleMission"
   twitter: "GBMFamily"
   youtube: "GBMFamily"

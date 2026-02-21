@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
+  <p><strong>Date:</strong> {{ page.date | date: "%B %-d, %Y" }}</p>
+  <p><strong>Location:</strong> {{ page.location }}</p>
+</div>
+
+{% if page.image %}
+<img src="{{ page.image }}" alt="{{ page.title }}" style="max-width:100%; height:auto;">
+{% endif %}
+
+<div class="page-content">
+  {{ content }}
+</div>

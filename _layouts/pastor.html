@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="container my-5">
+
+  <!-- Pastor Header -->
+  <div class="text-center mb-4">
+    <h1>{{ page.name }}</h1>
+  </div>
+
+  <!-- Pastor Image -->
+  {% if page.image %}
+  <div class="text-center my-4">
+    <img src="{{ page.image }}" alt="{{ page.name }}" class="img-fluid rounded shadow-sm" style="max-height:300px; width:auto;">
+  </div>
+  {% endif %}
+
+  <!-- Bio & Content -->
+  <div class="page-content mx-auto" style="max-width:800px; text-align:left;">
+    {{ page.bio | markdownify }}
+    {{ content }}
+
+    {% if page.assembly %}
+    <p class="mt-3"><strong>Assembly:</strong> 
+      <a href="{% if page.assembly_link %}{{ page.assembly_link }}{% else %}/assemblies/{{ page.assembly | slugify }}{% endif %}">
+        {{ page.assembly }}
+      </a>
+    </p>
+    {% endif %}
+
+    <!-- Contact Info -->
+    {% if page.contact_email %}
+    <p><strong>Email:</strong> <a href="mailto:{{ page.contact_email }}">{{ page.contact_email }}</a></p>
+    {% endif %}
+
+    {% if page.contact_phone %}
+    <p><strong>Phone:</strong> <a href="tel:{{ page.contact_phone }}">{{ page.contact_phone }}</a></p>
+    {% endif %}
+  </div>
+
+</div>

@@ -3,61 +3,34 @@ layout: default
 title: Home
 ---
 
-# Grace Bible Mission
+<div class="hero">
+  <h1>Grace Bible Mission</h1>
+  <p>Bringing many Sons to glory — Hebrews 2:10</p>
+  <a class="cta" href="/contact.html">Join Us This Sunday</a>
+</div>
 
-**Bringing many Sons to glory. — Hebrews 2:10**
+<div class="section">
+  <h2>Welcome</h2>
+  <p>
+    We are a dynamic church committed to proclaiming the Word of God and making disciples of our Lord Jesus Christ.
+  </p>
+</div>
 
----
+<div class="section">
+  <h2>Our Mission</h2>
+  <div class="highlight">
+    <ul>
+      <li>Exalting God</li>
+      <li>Encouraging believers</li>
+      <li>Equipping Christians for ministry</li>
+      <li>Evangelizing the world</li>
+    </ul>
+  </div>
+</div>
 
-## Welcome
-
-We are a dynamic church committed to proclaiming the Word of God and making disciples of our Lord Jesus Christ.
-
----
-
-## Our Mission
-
-As a dynamic church proclaiming the Word of God, our Mission is to make disciples for our Lord Jesus Christ by:
-
-- Exalting God  
-- Encouraging believers  
-- Equipping Christians for ministry  
-- Evangelizing the World  
-
----
-
-## Service Times
-
-### Sunday
-- Sunday School: 9:00 am  
-- Morning Worship Service: 10:00 am  
-- House Caring Fellowship: 5:00 pm  
-
-### Monday
-- Breakthrough at Dawn: 6:00 am  
-- Bible Study: 5:00 pm  
-
-### Wednesday
-- Prayer Meeting / Men & Women Meetings / Youth Meeting: 5:00 pm  
-
-### Thursday
-- Sunday School Preview: 5:00 pm  
-
-### Special Meetings
-- General Vigil (Last Friday): 10:00 pm  
-- Teenagers' Fellowship (4th Sunday): 4:00 pm  
-- STAR Fellowship (4th Sunday): 3:00 pm  
-- Priscilla & Aquila Meeting (4th Sunday): 5:00 pm  
-
----
-
-## Location
-
-Headquarters: Oke-Oniti, Osogbo
-
----
-
-## Motto
-
-**Preach, teach, disciple.**  
-Colossians 1:28; II Timothy 2:2
+<div class="section">
+  <h2>Service Times</h2>
+  <p><strong>Sunday:</strong> 9:00am (Sunday School), 10:00am (Worship)</p>
+  <p><strong>Monday:</strong> 6:00am (Breakthrough), 5:00pm (Bible Study)</p>
+  <p><strong>Wednesday:</strong> 5:00pm Meetings</p>
+</div>

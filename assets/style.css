@@ -34,6 +34,14 @@ h1, h2, h3 {
   color: #2c3e50;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
 hr {
   margin: 20px 0;
 }

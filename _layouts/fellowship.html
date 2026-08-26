@@ -57,6 +57,14 @@ layout: default
   </div>
   {% endif %}
 
+  <!-- ── Social links ──────────────────────────── -->
+  {% if page.social %}
+  <div class="fellowship-social" style="margin-bottom:40px;">
+    <h3 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Follow This Fellowship</h3>
+    {% include social-links.html social=page.social %}
+  </div>
+  {% endif %}
+
   <!-- ── Leadership ─────────────────────────────── -->
   {% if page.leadership %}
   <div class="fellowship-leadership">

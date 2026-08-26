@@ -159,6 +159,14 @@ layout: default
       </div>
       {% endif %}
 
+      <!-- Social links -->
+      {% if page.social %}
+      <div class="sidebar-card">
+        <h3>Follow This Programme</h3>
+        {% include social-links.html social=page.social %}
+      </div>
+      {% endif %}
+
     </aside>
 
   </div>

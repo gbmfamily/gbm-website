@@ -38,6 +38,18 @@ pastor:
 #     photo:
 
 # Paste your Google Maps <iframe> embed code here:
+# Banner image shown at the top of the assembly page (optional).
+# Upload a photo to assets/img/assemblies/ and set the path here.
+# Recommended size: 1400 x 500px. Leave blank for the default dark background.
+# banner: /assets/img/assemblies/ayekale.jpg
+
+# Social media for this specific assembly (optional — remove any that don't apply)
+# social:
+#   facebook: "https://facebook.com/GBMAyekale"
+#   instagram: ""
+#   whatsapp: ""
+#   youtube: ""
+
 map_embed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.72113562247!2d4.576197173578463!3d7.8193135067531845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103789eeb795029b%3A0xb74e501793ea6638!2sGrace%20Bible%20Mission%2C%20Ayekale%20Assembly!5e0!3m2!1sen!2sza!4v1787755456481!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>'
 
 # Uncomment for assembly-specific events:

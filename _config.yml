@@ -20,6 +20,17 @@ church:
   address: "No. 1, Grace Bible Mission Street, Oke-Oniti, Osogbo, Osun State, Nigeria"
   founded: "1987"
 
+# ── Social media (site-wide) ─────────────────────────────────
+# Add the full URL for each platform GBM is on.
+# Leave blank or remove any platform that doesn't apply.
+social:
+  facebook: "https://facebook.com/GBMFamily"
+  instagram: "https://instagram.com/gbmfamily"
+  youtube: "https://youtube.com/@GBMMedia"
+  twitter: ""
+  tiktok: ""
+  whatsapp: ""   # WhatsApp community/broadcast link
+
 # ── Collections ──────────────────────────────────────────────
 # These tell Jekyll to treat _assemblies/, _fellowships/, and
 # _programmes/ as content collections that auto-generate pages.
@@ -66,3 +77,4 @@ permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap

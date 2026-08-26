@@ -6,12 +6,17 @@ layout: default
      ASSEMBLY PAGE — auto-generated from _assemblies/*.md
      ══════════════════════════════════════════════ -->
 
-<section class="assembly-hero">
-  <div class="container">
-    <a href="{{ '/assemblies/' | relative_url }}" class="back-link">← All Assemblies</a>
-    <span class="eyebrow">GBM Assembly</span>
-    <h1>{{ page.name }}</h1>
-    {% if page.tagline %}<p class="assembly-tagline">{{ page.tagline }}</p>{% endif %}
+<section class="assembly-hero" {% if page.banner %}style="background-image:url('{{ page.banner | relative_url }}');"{% endif %}>
+  <div class="assembly-hero-overlay">
+    <div class="container">
+      <a href="{{ '/assemblies/' | relative_url }}" class="back-link light">← All Assemblies</a>
+      <div class="assembly-eyebrow-row">
+        <span class="eyebrow">GBM Assembly</span>
+        {% if page.headquarters %}<span class="hq-badge">Headquarters</span>{% endif %}
+      </div>
+      <h1>{{ page.name }}</h1>
+      {% if page.tagline %}<p class="assembly-tagline">{{ page.tagline }}</p>{% endif %}
+    </div>
   </div>
 </section>
 
@@ -19,7 +24,6 @@ layout: default
 
   <!-- ── Info bar ───────────────────────────────── -->
   <div class="assembly-info-bar">
-
     <div class="info-card">
       <span class="info-icon">📍</span>
       <div>
@@ -48,6 +52,21 @@ layout: default
     </div>
     {% endif %}
 
+    <!-- Assembly-level social links -->
+    {% if page.social %}
+    <div class="info-card">
+      <span class="info-icon">🔗</span>
+      <div>
+        <strong>Follow Us</strong>
+        <div class="inline-social">
+          {% if page.social.facebook %}<a href="{{ page.social.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+          {% if page.social.instagram %}<a href="{{ page.social.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+          {% if page.social.whatsapp %}<a href="{{ page.social.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>{% endif %}
+          {% if page.social.youtube %}<a href="{{ page.social.youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
   </div>
 
   <!-- ── Main content ────────────────────────────── -->
@@ -62,17 +81,25 @@ layout: default
       </div>
       {% endif %}
 
-      <!-- Leadership -->
+      <!-- Leadership — only shown if pastor name is real -->
+      {% assign has_pastor = false %}
+      {% if page.pastor and page.pastor.name and page.pastor.name != "To Be Updated" %}
+        {% assign has_pastor = true %}
+      {% endif %}
+
+      {% if has_pastor or page.supporting_leaders %}
       <div class="assembly-leadership">
         <h2>Leadership</h2>
 
-        {% if page.pastor %}
+        {% if has_pastor %}
         <div class="leader-card featured">
-          {% if page.pastor.photo %}
-          <img src="{{ page.pastor.photo | relative_url }}" alt="Pastor {{ page.pastor.name }}" />
+          {% if page.pastor.photo and page.pastor.photo != "" %}
+          <div class="leader-photo-wrapper" style="width:72px;height:72px;border-radius:50%;overflow:hidden;flex-shrink:0;">
+            <img src="{{ page.pastor.photo | relative_url }}" alt="{{ page.pastor.name }}" />
+          </div>
           {% else %}
-          <div class="leader-photo-placeholder">
-            <span>{{ page.pastor.name | slice: 0 }}</span>
+          <div class="leader-photo-placeholder" style="width:72px;height:72px;border-radius:50%;background:var(--depth-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span style="font-family:var(--font-display);font-weight:800;color:white;font-size:1.6rem;">{{ page.pastor.name | split: " " | last | slice: 0 }}</span>
           </div>
           {% endif %}
           <div class="leader-info">
@@ -89,11 +116,13 @@ layout: default
         <div class="supporting-leaders">
           {% for leader in page.supporting_leaders %}
           <div class="leader-card">
-            {% if leader.photo %}
-            <img src="{{ leader.photo | relative_url }}" alt="{{ leader.name }}" />
+            {% if leader.photo and leader.photo != "" %}
+            <div class="leader-photo-wrapper" style="width:56px;height:56px;border-radius:50%;overflow:hidden;flex-shrink:0;">
+              <img src="{{ leader.photo | relative_url }}" alt="{{ leader.name }}" />
+            </div>
             {% else %}
-            <div class="leader-photo-placeholder small">
-              <span>{{ leader.name | slice: 0 }}</span>
+            <div class="leader-photo-placeholder" style="width:56px;height:56px;border-radius:50%;background:var(--depth-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-family:var(--font-display);font-weight:800;color:white;font-size:1.2rem;">{{ leader.name | split: " " | last | slice: 0 }}</span>
             </div>
             {% endif %}
             <div class="leader-info">
@@ -104,8 +133,8 @@ layout: default
           {% endfor %}
         </div>
         {% endif %}
-
       </div>
+      {% endif %}
 
       <!-- Special Events -->
       {% if page.events %}
@@ -136,6 +165,5 @@ layout: default
     </div>
     {% endif %}
 
-  </div><!-- /.assembly-main -->
-
-</div><!-- /.container -->
+  </div>
+</div>

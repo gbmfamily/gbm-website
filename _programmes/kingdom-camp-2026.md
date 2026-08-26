@@ -47,6 +47,12 @@ contact:
   email:
   whatsapp:
 
+# Social media for this programme (optional)
+# social:
+#   facebook: "https://facebook.com/events/..."
+#   instagram: ""
+#   whatsapp: ""   # WhatsApp group/broadcast for this programme
+
 # Paste your Google Maps embed here when ready:
 # map_embed: '<iframe src="https://www.google.com/maps/embed?..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
 ---

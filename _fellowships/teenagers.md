@@ -9,6 +9,11 @@ leadership:
     phone: "08103780458"
     photo:
 banner: /assets/img/students-teens.jpg
+# Social media for this fellowship (optional)
+# social:
+#   facebook: ""
+#   instagram: ""
+#   whatsapp: ""
 ---
 
 Teenagers Fellowship is a dedicated space where young people between the ages of 13 and 17 are grounded in the Word of God, shaped in character, and raised in purpose. In a world full of distractions, we provide a community where teenagers can truly encounter Christ and discover who they are in Him.

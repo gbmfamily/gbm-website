@@ -960,6 +960,11 @@ p:last-child { margin-bottom: 0; }
   align-items: flex-end;
   padding: 48px 0;
   width: 100%;
+  pointer-events: none;  /* gradient layer — clicks pass through to content */
+}
+.assembly-hero-overlay .container,
+.assembly-hero-overlay .container * {
+  pointer-events: auto;  /* restore clicks on all content inside */
 }
 .assembly-hero .eyebrow { color: var(--passion-red); }
 .assembly-hero h1 { color: var(--white); }
@@ -1181,6 +1186,11 @@ p:last-child { margin-bottom: 0; }
   align-items: flex-end;
   padding: 48px 0;
   width: 100%;
+  pointer-events: none;
+}
+.fellowship-hero-overlay .container,
+.fellowship-hero-overlay .container * {
+  pointer-events: auto;
 }
 .fellowship-hero h1 { color: var(--white); }
 .fellowship-tagline { color: rgba(255,255,255,0.7); margin-top: 12px; font-size: 1.05rem; }
@@ -1225,6 +1235,11 @@ p:last-child { margin-bottom: 0; }
   align-items: flex-end;
   padding: 48px 0;
   width: 100%;
+  pointer-events: none;
+}
+.programme-hero-overlay .container,
+.programme-hero-overlay .container * {
+  pointer-events: auto;
 }
 .programme-hero h1 { color: var(--white); margin-bottom: 16px; }
 .meta-pill {

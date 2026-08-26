@@ -1,0 +1,141 @@
+---
+layout: default
+---
+
+<!-- ══════════════════════════════════════════════
+     ASSEMBLY PAGE — auto-generated from _assemblies/*.md
+     ══════════════════════════════════════════════ -->
+
+<section class="assembly-hero">
+  <div class="container">
+    <a href="{{ '/assemblies/' | relative_url }}" class="back-link">← All Assemblies</a>
+    <span class="eyebrow">GBM Assembly</span>
+    <h1>{{ page.name }}</h1>
+    {% if page.tagline %}<p class="assembly-tagline">{{ page.tagline }}</p>{% endif %}
+  </div>
+</section>
+
+<div class="assembly-body container">
+
+  <!-- ── Info bar ───────────────────────────────── -->
+  <div class="assembly-info-bar">
+
+    <div class="info-card">
+      <span class="info-icon">📍</span>
+      <div>
+        <strong>Location</strong>
+        <p>{{ page.address }}</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <span class="info-icon">🕐</span>
+      <div>
+        <strong>Service Times</strong>
+        {% for time in page.service_times %}
+        <p>{{ time }}</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if page.phone %}
+    <div class="info-card">
+      <span class="info-icon">📞</span>
+      <div>
+        <strong>Contact</strong>
+        <p><a href="tel:{{ page.phone }}">{{ page.phone }}</a></p>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+  <!-- ── Main content ────────────────────────────── -->
+  <div class="assembly-main">
+
+    <!-- Left: description + leadership + events -->
+    <div class="assembly-content">
+
+      {% if content != "" %}
+      <div class="assembly-description">
+        {{ content }}
+      </div>
+      {% endif %}
+
+      <!-- Leadership -->
+      <div class="assembly-leadership">
+        <h2>Leadership</h2>
+
+        {% if page.pastor %}
+        <div class="leader-card featured">
+          {% if page.pastor.photo %}
+          <img src="{{ page.pastor.photo | relative_url }}" alt="Pastor {{ page.pastor.name }}" />
+          {% else %}
+          <div class="leader-photo-placeholder">
+            <span>{{ page.pastor.name | slice: 0 }}</span>
+          </div>
+          {% endif %}
+          <div class="leader-info">
+            <span class="leader-role">Assembly Pastor</span>
+            <h3>{{ page.pastor.name }}</h3>
+            {% if page.pastor.phone %}
+            <a href="tel:{{ page.pastor.phone }}" class="leader-contact">{{ page.pastor.phone }}</a>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.supporting_leaders %}
+        <div class="supporting-leaders">
+          {% for leader in page.supporting_leaders %}
+          <div class="leader-card">
+            {% if leader.photo %}
+            <img src="{{ leader.photo | relative_url }}" alt="{{ leader.name }}" />
+            {% else %}
+            <div class="leader-photo-placeholder small">
+              <span>{{ leader.name | slice: 0 }}</span>
+            </div>
+            {% endif %}
+            <div class="leader-info">
+              <span class="leader-role">{{ leader.role }}</span>
+              <h4>{{ leader.name }}</h4>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+
+      <!-- Special Events -->
+      {% if page.events %}
+      <div class="assembly-events">
+        <h2>Upcoming Events</h2>
+        {% for event in page.events %}
+        <div class="event-item">
+          <div class="event-date">{{ event.date }}</div>
+          <div class="event-details">
+            <strong>{{ event.name }}</strong>
+            {% if event.time %}<span>{{ event.time }}</span>{% endif %}
+            {% if event.description %}<p>{{ event.description }}</p>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Right: Google Map -->
+    {% if page.map_embed %}
+    <div class="assembly-map">
+      <h2>Find Us</h2>
+      <div class="map-container">
+        {{ page.map_embed }}
+      </div>
+    </div>
+    {% endif %}
+
+  </div><!-- /.assembly-main -->
+
+</div><!-- /.container -->

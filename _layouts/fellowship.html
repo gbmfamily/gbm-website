@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+<!-- ══════════════════════════════════════════════
+     FELLOWSHIP PAGE — auto-generated from _fellowships/*.md
+     ══════════════════════════════════════════════ -->
+
+<section class="fellowship-hero" {% if page.banner %}style="background-image:url('{{ page.banner | relative_url }}');"{% endif %}>
+  <div class="fellowship-hero-overlay">
+    <div class="container">
+      <a href="{{ '/fellowships/' | relative_url }}" class="back-link light">← All Fellowships</a>
+      <span class="eyebrow">GBM Fellowship</span>
+      <h1>{{ page.name }}</h1>
+      {% if page.tagline %}<p class="fellowship-tagline">{{ page.tagline }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+<div class="fellowship-body container">
+
+  <!-- ── Schedule info ──────────────────────────── -->
+  <div class="fellowship-info-bar">
+    {% if page.schedule %}
+    <div class="info-card">
+      <span class="info-icon">📅</span>
+      <div>
+        <strong>Meeting Schedule</strong>
+        <p>{{ page.schedule }}</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if page.time %}
+    <div class="info-card">
+      <span class="info-icon">🕐</span>
+      <div>
+        <strong>Time</strong>
+        <p>{{ page.time }}</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if page.note %}
+    <div class="info-card">
+      <span class="info-icon">ℹ️</span>
+      <div>
+        <strong>Note</strong>
+        <p>{{ page.note }}</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- ── Description ────────────────────────────── -->
+  {% if content != "" %}
+  <div class="fellowship-description">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <!-- ── Leadership ─────────────────────────────── -->
+  {% if page.leadership %}
+  <div class="fellowship-leadership">
+    <h2>Leadership</h2>
+    <div class="leaders-grid">
+      {% for leader in page.leadership %}
+      <div class="leader-card">
+        {% if leader.photo and leader.photo != "" %}
+        <div class="leader-photo-wrapper">
+          <img src="{{ leader.photo | relative_url }}" alt="{{ leader.name }}" loading="lazy" />
+        </div>
+        {% else %}
+        <div class="leader-photo-wrapper">
+          <div class="leader-initials">{{ leader.name | slice: 0 }}</div>
+        </div>
+        {% endif %}
+        <div class="leader-card-body">
+          <span class="leader-title">{{ leader.role }}</span>
+          <h4>{{ leader.name }}</h4>
+          {% if leader.phone %}
+          <a href="tel:{{ leader.phone }}" class="leader-contact" style="font-size:0.82rem;color:var(--text-light);">{{ leader.phone }}</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+</div>

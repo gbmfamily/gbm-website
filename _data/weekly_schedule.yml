@@ -1,0 +1,37 @@
+# ============================================================
+# Grace Bible Mission — Weekly Programme Schedule
+# ============================================================
+# HOW TO UPDATE:
+#   - Each day has a list of 'programmes'
+#   - Each programme has a 'name' and a 'time'
+#   - If a time is not fixed, use a note like "Check announcements"
+# ============================================================
+
+- day: Sunday
+  programmes:
+    - name: Sunday School
+      time: 9:00 AM
+    - name: Sunday Service
+      time: 10:00 AM
+
+- day: Monday
+  programmes:
+    - name: Bible Study
+      time: 5:00 PM
+
+- day: Wednesday
+  programmes:
+    - name: Prayer Meeting
+      time: 5:00 PM
+    - name: Women of Grace / Men of Vision
+      time: 5:00 PM (alternating)
+
+- day: Thursday
+  programmes:
+    - name: Sunday School Preparatory
+      time: 5:00 PM
+
+- day: Friday
+  programmes:
+    - name: Vigil
+      time: Check announcements

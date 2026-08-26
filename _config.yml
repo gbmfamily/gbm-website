@@ -1,0 +1,68 @@
+# ============================================================
+# Grace Bible Mission — Jekyll Configuration
+# ============================================================
+# EDITING GUIDE:
+#   - Change 'url' to your actual domain when deploying
+#   - Change 'title' and 'description' if the church name changes
+#   - Do NOT edit the 'collections' section unless you know Jekyll
+# ============================================================
+
+title: "Grace Bible Mission"
+tagline: "Preach, Teach, Disciple"
+description: "A dynamic church proclaiming the Word of God — making disciples for our Lord Jesus Christ."
+url: "https://gbmfamily.org"
+baseurl: ""
+
+# Church contact info (used in footer and contact sections)
+church:
+  email: "info@gbmfamily.org"
+  youtube: "https://youtube.com/@GBMMedia"
+  address: "No. 1, Grace Bible Mission Street, Oke-Oniti, Osogbo, Osun State, Nigeria"
+  founded: "1987"
+
+# ── Collections ──────────────────────────────────────────────
+# These tell Jekyll to treat _assemblies/, _fellowships/, and
+# _programmes/ as content collections that auto-generate pages.
+collections:
+  assemblies:
+    output: true
+    permalink: /assemblies/:slug/
+  fellowships:
+    output: true
+    permalink: /fellowships/:slug/
+  programmes:
+    output: true
+    permalink: /programmes/:slug/
+
+# ── Default front matter ──────────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+      type: assemblies
+    values:
+      layout: assembly
+  - scope:
+      path: ""
+      type: fellowships
+    values:
+      layout: fellowship
+  - scope:
+      path: ""
+      type: programmes
+    values:
+      layout: programme
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# ── Build settings ────────────────────────────────────────────
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins (GitHub Pages supports these natively — no extra install needed)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

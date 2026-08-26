@@ -1,0 +1,44 @@
+<!-- ══════════════════════════════════════════
+     NAVBAR — shared across every page
+     Do not edit the HTML structure here without
+     also checking assets/js/main.js (mobile toggle)
+     ══════════════════════════════════════════ -->
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+
+    <!-- Logo + Name -->
+    <a href="{{ '/' | relative_url }}" class="nav-brand" aria-label="Grace Bible Mission Home">
+      <img src="{{ '/assets/img/logo.jpeg' | relative_url }}" alt="GBM Logo" />
+      <span>Grace Bible Mission</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="nav-links" role="list">
+      <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active" aria-current="page"{% endif %}>Home</a></li>
+      <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active" aria-current="page"{% endif %}>About</a></li>
+      <li><a href="{{ '/assemblies/' | relative_url }}" {% if page.url contains '/assemblies' %}class="active" aria-current="page"{% endif %}>Assemblies</a></li>
+      <li><a href="{{ '/fellowships/' | relative_url }}" {% if page.url contains '/fellowships' %}class="active" aria-current="page"{% endif %}>Fellowships</a></li>
+      <li><a href="{{ '/programmes/' | relative_url }}" {% if page.url contains '/programmes' %}class="active" aria-current="page"{% endif %}>Programmes</a></li>
+      <li><a href="{{ '/about/#contact' | relative_url }}" class="btn-nav">Visit Us</a></li>
+    </ul>
+
+    <!-- Mobile hamburger button -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile menu (hidden by default, toggled by JS) -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/assemblies/' | relative_url }}">Assemblies</a></li>
+      <li><a href="{{ '/fellowships/' | relative_url }}">Fellowships</a></li>
+      <li><a href="{{ '/programmes/' | relative_url }}">Programmes</a></li>
+      <li><a href="{{ '/about/#contact' | relative_url }}">Visit Us</a></li>
+    </ul>
+  </div>
+</nav>

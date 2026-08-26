@@ -1,0 +1,165 @@
+---
+layout: default
+---
+
+<!-- ══════════════════════════════════════════════
+     PROGRAMME PAGE — auto-generated from _programmes/*.md
+     ══════════════════════════════════════════════ -->
+
+<section class="programme-hero" {% if page.banner %}style="background-image: url('{{ page.banner | relative_url }}');"{% endif %}>
+  <div class="programme-hero-overlay">
+    <div class="container">
+      <a href="{{ '/programmes/' | relative_url }}" class="back-link light">← All Programmes</a>
+      <span class="eyebrow">Special Programme</span>
+      <h1>{{ page.title }}</h1>
+      <div class="programme-meta-row">
+        {% if page.dates %}<span class="meta-pill">📅 {{ page.dates }}</span>{% endif %}
+        {% if page.time %}<span class="meta-pill">🕐 {{ page.time }}</span>{% endif %}
+        {% if page.venue %}<span class="meta-pill">📍 {{ page.venue }}</span>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="programme-body container">
+  <div class="programme-layout">
+
+    <!-- ── Left: main content ─────────────────── -->
+    <div class="programme-main">
+
+      <div class="programme-content">
+        {{ content }}
+      </div>
+
+      <!-- Registration CTA -->
+      {% if page.register_link %}
+      <div class="programme-cta">
+        <a href="{{ page.register_link }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          Register Now →
+        </a>
+      </div>
+      {% endif %}
+
+      <!-- Google Map -->
+      {% if page.map_embed %}
+      <div class="programme-map">
+        <h2>Venue Location</h2>
+        <div class="map-container">
+          {{ page.map_embed }}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <!-- ── Right: info sidebar ───────────────── -->
+    <aside class="programme-sidebar">
+
+      <!-- Quick details card -->
+      <div class="sidebar-card">
+        <h3>Event Details</h3>
+
+        {% if page.dates %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">📅</span>
+          <div>
+            <strong>Date(s)</strong>
+            <p>{{ page.dates }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.time %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">🕐</span>
+          <div>
+            <strong>Time</strong>
+            <p>{{ page.time }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.venue %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">📍</span>
+          <div>
+            <strong>Venue</strong>
+            <p>{{ page.venue }}</p>
+            {% if page.venue_address %}
+            <p class="sidebar-sub">{{ page.venue_address }}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.audience %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">👥</span>
+          <div>
+            <strong>For</strong>
+            <p>{{ page.audience }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.dress_code %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">👔</span>
+          <div>
+            <strong>Dress Code</strong>
+            <p>{{ page.dress_code }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.register_link %}
+        <a href="{{ page.register_link }}" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px;" target="_blank" rel="noopener">
+          Register Now →
+        </a>
+        {% endif %}
+      </div>
+
+      <!-- Contact card -->
+      {% if page.contact %}
+      <div class="sidebar-card">
+        <h3>Contact</h3>
+        {% if page.contact.name %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">👤</span>
+          <div>
+            <strong>{{ page.contact.name }}</strong>
+            {% if page.contact.role %}<p>{{ page.contact.role }}</p>{% endif %}
+          </div>
+        </div>
+        {% endif %}
+        {% if page.contact.phone %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">📞</span>
+          <div>
+            <a href="tel:{{ page.contact.phone }}">{{ page.contact.phone }}</a>
+          </div>
+        </div>
+        {% endif %}
+        {% if page.contact.email %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">✉️</span>
+          <div>
+            <a href="mailto:{{ page.contact.email }}">{{ page.contact.email }}</a>
+          </div>
+        </div>
+        {% endif %}
+        {% if page.contact.whatsapp %}
+        <div class="sidebar-detail">
+          <span class="sidebar-icon">💬</span>
+          <div>
+            <a href="https://wa.me/{{ page.contact.whatsapp | remove: '+' | remove: ' ' | remove: '-' }}" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </aside>
+
+  </div>
+</div>

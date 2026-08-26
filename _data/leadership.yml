@@ -1,0 +1,37 @@
+# ============================================================
+# Grace Bible Mission — National Leadership
+# ============================================================
+# HOW TO UPDATE:
+#   - Edit names, titles, photos and bios below
+#   - The FIRST entry is the General Overseer — shown as a
+#     large featured card at the top of the leadership section
+#   - All others appear in the grid below
+#   - 'photo' path is relative to assets/img/leadership/
+#   - 'bio' is optional — a short 1–2 sentence description
+#     (only shown on the General Overseer featured card)
+# ============================================================
+
+- name: Pastor Kayode Ajayi
+  title: General Overseer
+  photo: /assets/img/general-overseer.jpg
+  bio: >
+    Provides overall leadership, spiritual direction, and governance oversight
+    for Grace Bible Mission. Pastor Ajayi has shepherded the mission's growth
+    from its founding in Osogbo to a family of assemblies reaching across
+    Nigeria and beyond.
+
+- name: Pastor Kayode Olarinre
+  title: Deputy General Overseer
+  photo:
+
+- name: Pastor Femi Olatunde
+  title: Assistant General Overseer
+  photo:
+
+- name: Pastor Femi Odentunde
+  title: Assistant General Overseer (Planning)
+  photo:
+
+- name: Pastor A.O. Obasa
+  title: Assistant General Overseer
+  photo:

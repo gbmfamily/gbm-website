@@ -4,9 +4,9 @@ tagline: Singles Thriving and Reaching — growing in purpose, faith and communi
 schedule: Check weekly announcements for meeting dates
 note: Meeting details are shared through weekly announcements.
 banner: /assets/img/star-logo.png
-# leadership:
-#   - name: Joshua Olunlade
-#     role: President
+leadership:
+  - name: Joshua Olunlade
+    role: President
 #     phone: 
 #     photo: /assets/img/people/joshua-olunlade.jpg
 #   - name: Oluwaseun Adebisi

@@ -37,15 +37,16 @@ Every time you push (save) a change to GitHub, the site rebuilds and goes live w
 
 ## How to deploy to GitHub Pages
 
-This site uses **GitHub Actions** (not the legacy GitHub Pages branch method).
+This site deploys via the standard **GitHub Pages branch method**.
 
 **One-time setup:**
 1. Push this repository to GitHub
 2. Go to your repo → **Settings → Pages → Source**
-3. Change it to **"GitHub Actions"**
-4. That's it — the workflow in `.github/workflows/deploy.yml` handles everything automatically on every push
+3. Set source to **"Deploy from a branch"**
+4. Set branch to **`main`** (or whichever branch you use), folder **`/ (root)`**
+5. Click Save
 
-The site will be live at your custom domain (`gbmfamily.org`) once DNS is configured to point to GitHub Pages.
+GitHub Pages will build and deploy the site automatically every time you push to that branch. The site will be live at `gbmfamily.org` once DNS is pointing to GitHub Pages.
 
 ---
 
@@ -443,10 +444,6 @@ gbm-website/
 │   ├── navbar.html
 │   ├── footer.html
 │   └── social-links.html   ← Social media pills (used everywhere)
-│
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      ← Auto-deploy to GitHub Pages — DO NOT EDIT
 │
 ├── assets/
 │   ├── css/main.css        ← All styles — DO NOT EDIT

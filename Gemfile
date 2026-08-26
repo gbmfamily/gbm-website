@@ -1,10 +1,5 @@
 source "https://rubygems.org"
 
-# Jekyll 4.x — works with Ruby 4.0, no downgrades needed.
-gem "jekyll", "~> 4.3"
-
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-seo-tag"
-  gem "jekyll-sitemap"
-end
+gem "github-pages", group: :jekyll_plugins
+gem "csv"
+gem "bigdecimal"

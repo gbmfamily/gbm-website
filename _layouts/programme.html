@@ -163,7 +163,10 @@ layout: default
       {% if page.social %}
       <div class="sidebar-card">
         <h3>Follow This Programme</h3>
-        {% include social-links.html social=page.social %}
+        {% if page.social.facebook and page.social.facebook != "" %}<a href="{{ page.social.facebook }}" class="social-pill facebook" target="_blank" rel="noopener">Facebook</a>{% endif %}
+        {% if page.social.instagram and page.social.instagram != "" %}<a href="{{ page.social.instagram }}" class="social-pill instagram" target="_blank" rel="noopener">Instagram</a>{% endif %}
+        {% if page.social.youtube and page.social.youtube != "" %}<a href="{{ page.social.youtube }}" class="social-pill youtube" target="_blank" rel="noopener">YouTube</a>{% endif %}
+        {% if page.social.whatsapp and page.social.whatsapp != "" %}<a href="{{ page.social.whatsapp }}" class="social-pill whatsapp" target="_blank" rel="noopener">WhatsApp</a>{% endif %}
       </div>
       {% endif %}
 

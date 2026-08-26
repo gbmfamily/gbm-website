@@ -29,7 +29,7 @@ social:
   youtube: "https://youtube.com/@GBMMedia"
   twitter: ""
   tiktok: ""
-  whatsapp: ""   # WhatsApp community/broadcast link
+  whatsapp: ""
 
 # ── Collections ──────────────────────────────────────────────
 # These tell Jekyll to treat _assemblies/, _fellowships/, and
@@ -47,6 +47,18 @@ collections:
 
 # ── Default front matter ──────────────────────────────────────
 defaults:
+  # All pages default to 'page' layout
+  - scope:
+      path: ""
+    values:
+      layout: page
+  # Posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  # Collections
   - scope:
       path: ""
       type: assemblies
@@ -62,11 +74,10 @@ defaults:
       type: programmes
     values:
       layout: programme
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
+
+# ── Theme ────────────────────────────────────────────────────
+# Explicitly set no remote theme — we use our own layouts
+theme: null
 
 # ── Build settings ────────────────────────────────────────────
 markdown: kramdown

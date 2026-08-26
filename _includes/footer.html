@@ -34,7 +34,13 @@
         {% if site.church.email %}
         <p>✉️ <a href="mailto:{{ site.church.email }}">{{ site.church.email }}</a></p>
         {% endif %}
-        {% include social-links.html social=site.social %}
+        <div class="social-links-row">
+        {% if site.social.facebook and site.social.facebook != "" %}<a href="{{ site.social.facebook }}" class="social-pill facebook" target="_blank" rel="noopener">Facebook</a>{% endif %}
+        {% if site.social.instagram and site.social.instagram != "" %}<a href="{{ site.social.instagram }}" class="social-pill instagram" target="_blank" rel="noopener">Instagram</a>{% endif %}
+        {% if site.social.youtube and site.social.youtube != "" %}<a href="{{ site.social.youtube }}" class="social-pill youtube" target="_blank" rel="noopener">YouTube</a>{% endif %}
+        {% if site.social.twitter and site.social.twitter != "" %}<a href="{{ site.social.twitter }}" class="social-pill twitter" target="_blank" rel="noopener">Twitter</a>{% endif %}
+        {% if site.social.whatsapp and site.social.whatsapp != "" %}<a href="{{ site.social.whatsapp }}" class="social-pill whatsapp" target="_blank" rel="noopener">WhatsApp</a>{% endif %}
+        </div>
       </div>
 
     </div>

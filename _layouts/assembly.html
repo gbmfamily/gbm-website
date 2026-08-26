@@ -30,9 +30,7 @@ layout: default
       <span class="info-icon">🕐</span>
       <div>
         <strong>Service Times</strong>
-        {% for time in page.service_times %}
-        <p>{{ time }}</p>
-        {% endfor %}
+        {% for time in page.service_times %}<p>{{ time }}</p>{% endfor %}
       </div>
     </div>
     {% if page.phone %}
@@ -44,54 +42,31 @@ layout: default
       </div>
     </div>
     {% endif %}
-    {% if page.social %}
-    <div class="info-card">
-      <span class="info-icon">🔗</span>
-      <div>
-        <strong>Follow Us</strong>
-        <div class="social-links-row">
-          {% include social-links.html social=page.social %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
   </div>
 
   <div class="assembly-main">
-
     <div class="assembly-content">
 
       {% if content != "" %}
       <div class="assembly-description">{{ content }}</div>
       {% endif %}
 
-      {% assign pastor_name = page.pastor.name %}
-      {% unless pastor_name == "To Be Updated" or pastor_name == "" or pastor_name == nil %}
+      {% assign pname = page.pastor.name %}
+      {% unless pname == "To Be Updated" or pname == "" or pname == nil %}
       <div class="assembly-leadership">
         <h2>Leadership</h2>
         <div class="leader-card featured">
-          {% include leader-photo.html photo=page.pastor.photo name=page.pastor.name size="72" %}
+          {% if page.pastor.photo and page.pastor.photo != "" %}
+          <img src="{{ page.pastor.photo | relative_url }}" alt="{{ page.pastor.name }}" style="width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+          {% else %}
+          <div style="width:72px;height:72px;border-radius:50%;background:var(--depth-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);font-weight:800;color:white;font-size:1.6rem;">{{ page.pastor.name | split:" " | last | slice:0 }}</div>
+          {% endif %}
           <div class="leader-info">
             <span class="leader-role">Assembly Pastor</span>
             <h3>{{ page.pastor.name }}</h3>
-            {% if page.pastor.phone %}
-            <a href="tel:{{ page.pastor.phone }}" class="leader-contact">{{ page.pastor.phone }}</a>
-            {% endif %}
+            {% if page.pastor.phone %}<a href="tel:{{ page.pastor.phone }}" class="leader-contact">{{ page.pastor.phone }}</a>{% endif %}
           </div>
         </div>
-        {% if page.supporting_leaders %}
-        <div class="supporting-leaders">
-          {% for leader in page.supporting_leaders %}
-          <div class="leader-card">
-            {% include leader-photo.html photo=leader.photo name=leader.name size="56" %}
-            <div class="leader-info">
-              <span class="leader-role">{{ leader.role }}</span>
-              <h4>{{ leader.name }}</h4>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
       </div>
       {% endunless %}
 
@@ -116,11 +91,9 @@ layout: default
     {% if page.map_embed %}
     <div class="assembly-map">
       <h2>Find Us</h2>
-      <div class="map-container">
-        {{ page.map_embed }}
-      </div>
+      <div class="map-container">{{ page.map_embed }}</div>
     </div>
     {% endif %}
-
   </div>
+
 </div>
